@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookBrowser.Interfaces
 {
-    internal class IBook
+    public interface IBook
     {
+        string Title { get; }
+        string Description { get; }
+        string Author { get; }
+        Genre Category { get; }
     }
 }
