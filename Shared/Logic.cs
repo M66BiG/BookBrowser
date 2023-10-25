@@ -10,8 +10,8 @@
             }
             else
             {
-                //Error
-                return 999;
+                Notification.ShowMessage(MessageType.UnknownInput, null, null);
+                return CheckNumber(Console.ReadLine());
             }
         }
     }

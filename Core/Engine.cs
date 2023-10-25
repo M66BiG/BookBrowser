@@ -7,7 +7,7 @@
             
             var numero = Book.AddBook();
             
-            Console.WriteLine(numero.Title + " " + numero.Description + " " + numero.Author + " " + numero.Category);
+            Console.WriteLine(numero.Title + " " + numero.Description + " " + numero.Author + " " + numero.Year + " " + numero.Category);
             /*while (true)
             {
 

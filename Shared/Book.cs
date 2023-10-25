@@ -1,13 +1,10 @@
-﻿using System.Numerics;
-using System.Runtime.Intrinsics.X86;
-
-namespace BookBrowser.Shared
+﻿namespace BookBrowser.Shared
 {
     public class Book : IBook
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Author { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? Author { get; set; }
         public int Year { get; set; }
         public Genre Category { get; set; }
         
@@ -15,13 +12,13 @@ namespace BookBrowser.Shared
         {
             Logic logic = new();
             Notification.ShowMessage(MessageType.SetBookTitle, null, null);
-            string title = Console.ReadLine();
+            string? title = Console.ReadLine();
 
             Notification.ShowMessage(MessageType.SetBookDescription, null, null);
-            string description = Console.ReadLine();
+            string? description = Console.ReadLine();
 
             Notification.ShowMessage(MessageType.SetBookAuthor, null, null);
-            string author = Console.ReadLine();
+            string? author = Console.ReadLine();
 
             Notification.ShowMessage(MessageType.SetBookYear, null, null);
             int year = logic.CheckNumber(Console.ReadLine());
