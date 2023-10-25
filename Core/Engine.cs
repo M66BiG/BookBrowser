@@ -5,12 +5,13 @@
         public static void Start()
         {
             
+            var numero = Book.AddBook();
             
-            
-            while (true)
+            Console.WriteLine(numero.Title + " " + numero.Description + " " + numero.Author + " " + numero.Category);
+            /*while (true)
             {
 
-            }
+            }*/
         }
         public static void Stop() 
         {

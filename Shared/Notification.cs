@@ -17,6 +17,7 @@
                 MessageType.SetBookDescription => "Was ist die Beschreibung des Buches?",
                 MessageType.SetBookAuthor => "Wie heißt der Autor?",
                 MessageType.SetBookGenre => "Was ist das Genre?",
+                MessageType.SetBookYear => "Im welchem Jahr wurde das Buch geschrieben?",
                 MessageType.UnknownInput => "Unbekannte Eingabe. Bitte versuche es nochmal.",
                 _ => "Unbekannte Eingabe.",
             };

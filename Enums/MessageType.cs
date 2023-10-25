@@ -8,6 +8,7 @@
         SetBookDescription,
         SetBookAuthor,
         SetBookGenre,
+        SetBookYear,
         UnknownInput,
     }
 }
