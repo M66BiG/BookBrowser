@@ -1,4 +1,6 @@
-﻿namespace BookBrowser.Shared
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace BookBrowser.Shared
 {
     public class Book : IBook
     {
@@ -7,10 +9,18 @@
         public string? Author { get; set; }
         public int Year { get; set; }
         public Genre Category { get; set; }
-        
-        public static Book AddBook () 
+
+        public static void ShowList(List<Book> bookShelf)
         {
-            Logic logic = new();
+            foreach (Book book in bookShelf)
+            {
+                Console.WriteLine(book.Title);
+            }
+        }
+
+        public static List<Book> AddBook(List<Book> bookShelf)
+        {
+            
             Notification.ShowMessage(MessageType.SetBookTitle, null, null);
             string? title = Console.ReadLine();
 
@@ -21,38 +31,37 @@
             string? author = Console.ReadLine();
 
             Notification.ShowMessage(MessageType.SetBookYear, null, null);
-            int year = logic.CheckNumber(Console.ReadLine());
+            int year = Logic.CheckNumber(Console.ReadLine());
 
-            Book book = new() 
-            { 
+            Book book = new()
+            {
                 Title = title,
-                Description = description, 
+                Description = description,
                 Author = author,
                 Year = year,
             };
             book.Category = book.GetCategory();
-            return book;
+            bookShelf.Add(book);
+            return bookShelf;
         }
-
-        private Genre GetCategory ()
+        private Genre GetCategory()
         {
-            Logic logic = new();
+            
             Notification.ShowMessage(MessageType.SetBookGenre, null, null);
 
             //Liste von Optionen anzeigen
             //Liste von Optionen anzeigen
             //Liste von Optionen anzeigen
-            
-            string tempstring = Console.ReadLine();
-            int tempNumb = logic.CheckNumber(tempstring);
-            if (!Enum.IsDefined(typeof(Genre), tempNumb)) 
+
+            string tempString = Console.ReadLine();
+            int tempNumb = Logic.CheckNumber(tempString);
+            if (!Enum.IsDefined(typeof(Genre), tempNumb))
             {
                 Notification.ShowMessage(MessageType.UnknownInput, null, null);
                 return GetCategory();
-                
+
             }
             return (Genre)tempNumb;
-
         }
     }
 }

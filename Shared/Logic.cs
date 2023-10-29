@@ -2,7 +2,7 @@
 {
     public class Logic
     {
-        public int CheckNumber(string a)
+        public static int CheckNumber(string a)
         {
             if (int.TryParse(a, out int inputNum))
             {

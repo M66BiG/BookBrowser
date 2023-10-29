@@ -4,14 +4,13 @@
     {
         public static void Start()
         {
-            
-            var numero = Book.AddBook();
-            
-            Console.WriteLine(numero.Title + " " + numero.Description + " " + numero.Author + " " + numero.Year + " " + numero.Category);
-            /*while (true)
-            {
+            //List<Book> bookShelf = Book.CreateBookShelf();
+            List<Book> bookShelf = new();
 
-            }*/
+            while (true)
+            {
+                Navigation.Navigator(bookShelf);
+            }
         }
         public static void Stop() 
         {

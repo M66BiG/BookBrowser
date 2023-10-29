@@ -2,7 +2,7 @@
 {
     public enum Genre
     {
-        Action,
+        Action = 1,
         Horror,
         Thriller,
         Romance,
