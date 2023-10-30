@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace BookBrowser.Shared
+﻿namespace BookBrowser.Shared
 {
     public class Book : IBook
     {
@@ -12,10 +10,13 @@ namespace BookBrowser.Shared
 
         public static void ShowList(List<Book> bookShelf)
         {
+            int i = 0;
             foreach (Book book in bookShelf)
             {
-                Console.WriteLine(book.Title);
+                Console.WriteLine($"{i}: {book.Title} {book.Description} von: {book.Author} aus dem Jahr: {book.Year} ({book.Category})");
+                i++;
             }
+            Console.WriteLine();
         }
 
         public static List<Book> AddBook(List<Book> bookShelf)
@@ -46,12 +47,8 @@ namespace BookBrowser.Shared
         }
         private Genre GetCategory()
         {
-            
             Notification.ShowMessage(MessageType.SetBookGenre, null, null);
-
-            //Liste von Optionen anzeigen
-            //Liste von Optionen anzeigen
-            //Liste von Optionen anzeigen
+            Console.WriteLine($"1: {Genre.Action}\n2: {Genre.Horror}\n3: {Genre.Thriller}\n4: {Genre.Romance}\n5: {Genre.SciFi}\n6: {Genre.Misc}");
 
             string tempString = Console.ReadLine();
             int tempNumb = Logic.CheckNumber(tempString);
@@ -62,6 +59,22 @@ namespace BookBrowser.Shared
 
             }
             return (Genre)tempNumb;
+        }
+        public static List<Book> DeleteBook(List<Book> bookShelf)
+        {
+            ShowList(bookShelf);
+            string tempString = Console.ReadLine();
+            int tempNumb = Logic.CheckNumber(tempString);
+            if (bookShelf.Count >= tempNumb)
+            {
+                bookShelf.RemoveAt(tempNumb);
+            }
+            else
+            {
+                Notification.ShowMessage(MessageType.UnknownInput, null, null);
+                DeleteBook(bookShelf);
+            }
+            return bookShelf;
         }
     }
 }
