@@ -10,7 +10,7 @@
 
         public static void ShowList(List<Book> bookShelf)
         {
-            int i = 0;
+            int i = 1;
             foreach (Book book in bookShelf)
             {
                 Console.WriteLine($"{i}: {book.Title} {book.Description} von: {book.Author} aus dem Jahr: {book.Year} ({book.Category})");
@@ -65,9 +65,9 @@
             ShowList(bookShelf);
             string tempString = Console.ReadLine();
             int tempNumb = Logic.CheckNumber(tempString);
-            if (bookShelf.Count >= tempNumb)
+            if (bookShelf.Count >= tempNumb - 1)
             {
-                bookShelf.RemoveAt(tempNumb);
+                bookShelf.RemoveAt(tempNumb - 1);
             }
             else
             {
