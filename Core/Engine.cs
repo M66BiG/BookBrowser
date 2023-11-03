@@ -1,4 +1,5 @@
 ﻿using BookBrowser.Enums;
+using System.Net.WebSockets;
 
 namespace BookBrowser.Core
 {

@@ -80,7 +80,7 @@ namespace BookBrowser.Shared
             return bookShelf;
         }
 
-        public static void GetSortBookRequest(List<Book> bookShelf)
+        public static List<Book> GetSortBookRequest(List<Book> bookShelf)
         {
 
             //Funktion um zu bestimmen nach was man filtern möchte
@@ -90,7 +90,7 @@ namespace BookBrowser.Shared
             string tempString = Console.ReadLine();
             int tempNumb = Logic.CheckNumber(tempString);
             SortBook(bookShelf, tempNumb);
-
+            return bookShelf;
         }
         private static List<Book> SortBook(List<Book> bookShelf, int choice) => choice switch
             {
@@ -116,7 +116,7 @@ namespace BookBrowser.Shared
             
             return choice switch
             {
-                1 => bookShelf.OrderBy(book => book.Category == Genre.Action).ToList(),
+                1 => bookShelf.OrderBy(book => book.Author).ToList(),
                 2 => bookShelf.Where(book => book.Category == Genre.Horror).ToList(),
                 3 => bookShelf.Where(book => book.Category == Genre.Thriller).ToList(),
                 4 => bookShelf.Where(book => book.Category == Genre.Romance).ToList(),
