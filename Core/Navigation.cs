@@ -28,10 +28,10 @@ namespace BookBrowser.Core
                 case Options.List: Book.ShowList(bookShelf); break;
                 case Options.Add: Book.AddBook(bookShelf); break;
                 case Options.Delete: Book.DeleteBook(bookShelf); break;
-                case Options.Sort: Console.WriteLine(); break;
+                case Options.Sort: Book.GetSortBookRequest(bookShelf); break;
                 case Options.Filter: Console.WriteLine(); break;
                 case Options.Quit: Engine.Stop(); break;
-                default: Console.WriteLine(); break;
+                default: Console.WriteLine("Wrong Input!"); break;
             }
         }
     }

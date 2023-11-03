@@ -9,6 +9,7 @@
         SetBookAuthor,
         SetBookGenre,
         SetBookYear,
+        SelectFilterGenre,
         UnknownInput,
     }
 }

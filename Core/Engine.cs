@@ -4,9 +4,8 @@ namespace BookBrowser.Core
 {
     internal class Engine
     {
-        public static void Start()
+        public static void Start(List <Book> bookShelf)
         {
-            List<Book> bookShelf = new();
             while (true)
             {
                 Navigation.Navigator(bookShelf);

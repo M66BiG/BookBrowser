@@ -18,6 +18,7 @@
                 MessageType.SetBookAuthor => "Wie heißt der Autor?",
                 MessageType.SetBookGenre => "Was ist das Genre?",
                 MessageType.SetBookYear => "Im welchem Jahr wurde das Buch geschrieben?",
+                MessageType.SelectFilterGenre => "Wähle aus nach welchem Genre du sortieren möchtest.",
                 MessageType.UnknownInput => "Unbekannte Eingabe. Bitte versuche es nochmal.",
                 _ => "Unbekannte Eingabe.",
             };
