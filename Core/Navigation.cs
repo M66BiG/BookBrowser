@@ -19,10 +19,7 @@ namespace BookBrowser.Core
             n.GetSelectedNavigation((Options)tempNumb, bookShelf);
         }
 
-        private void NavigatorList()
-        {
-            Console.WriteLine($"1: {Options.List}\n2: {Options.Add}\n3: {Options.Delete}\n4: {Options.Sort}\n5: {Options.Filter}\n6: {Options.Quit}\n ");
-        }
+        private void NavigatorList() => Console.WriteLine($"1: {Options.List}\n2: {Options.Add}\n3: {Options.Delete}\n4: {Options.Sort}\n5: {Options.Filter}\n6: {Options.Quit}\n ");
 
         private void GetSelectedNavigation(Options option, List<Book> bookShelf)
         {
