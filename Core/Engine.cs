@@ -1,4 +1,6 @@
-﻿namespace BookBrowser.Core
+﻿using BookBrowser.Enums;
+
+namespace BookBrowser.Core
 {
     internal class Engine
     {
@@ -12,7 +14,7 @@
         }
         public static void Stop() 
         {
-
+            Environment.Exit(0);
         }
     }
 }

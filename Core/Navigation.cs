@@ -33,7 +33,7 @@ namespace BookBrowser.Core
                 case Options.Delete: Book.DeleteBook(bookShelf); break;
                 case Options.Sort: Console.WriteLine(); break;
                 case Options.Filter: Console.WriteLine(); break;
-                case Options.Quit: Console.WriteLine(); break;
+                case Options.Quit: Engine.Stop(); break;
                 default: Console.WriteLine(); break;
             }
         }
