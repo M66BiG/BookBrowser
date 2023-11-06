@@ -14,13 +14,15 @@ namespace BookBrowser.Shared
         public static void ShowList(List<Book> bookShelf)
         {
             int i = 1;
-            foreach (Book book in bookShelf)
+            bookShelf.ForEach(book =>
             {
                 Console.WriteLine($"{i}: {book.Title} {book.Description} von: {book.Author} aus dem Jahr: {book.Year} ({book.Category})");
                 i++;
-            }
+            });
             Console.WriteLine();
         }
+
+        
 
         public static List<Book> AddBook(List<Book> bookShelf)
         {
