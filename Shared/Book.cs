@@ -82,8 +82,6 @@ namespace BookBrowser.Shared
 
         public static List<Book> SortBookByAttribute(List<Book> bookShelf)
         {
-            IEnumerable<Book> books = bookShelf.AsEnumerable();
-
             Notification.ShowMessage(MessageType.SelectSorting, null, null);
             Notification.ShowMessage(MessageType.ShowAttributes, null, null);
             string tempString = Console.ReadLine();
@@ -102,6 +100,28 @@ namespace BookBrowser.Shared
             };
             //6 => bookShelf.Where(book => book.Category == Genre.Misc).ToList(),
         }
-
+        public static void SortBookByGenre(List<Book> bookShelf)
+        {
+            Notification.ShowMessage(MessageType.SelectFilterGenre, null, null);
+            Notification.ShowMessage(MessageType.ShowGenres, null, null);
+            string tempString = Console.ReadLine();
+            int choice = Logic.CheckNumber(tempString);
+            if (!Enum.IsDefined(typeof(Genre), choice))
+            {
+                Notification.ShowMessage(MessageType.UnknownInput, null, null);
+                SortBookByGenre(bookShelf);
+            }
+            List<Book> books = choice switch
+            {
+                1 => bookShelf.Where(book => book.Category == Genre.Action).ToList(),
+                2 => bookShelf.Where(book => book.Category == Genre.Horror).ToList(),
+                3 => bookShelf.Where(book => book.Category == Genre.Thriller).ToList(),
+                4 => bookShelf.Where(book => book.Category == Genre.Romance).ToList(),
+                5 => bookShelf.Where(book => book.Category == Genre.SciFi).ToList(),
+                6 => bookShelf.Where(book => book.Category == Genre.Misc).ToList(),
+                _ => bookShelf.ToList(),
+            };
+            ShowList(books);
+        }
     }
 }

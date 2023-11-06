@@ -30,7 +30,7 @@ namespace BookBrowser.Core
                 case Options.Add: Book.AddBook(bookShelf); break;
                 case Options.Delete: Book.DeleteBook(bookShelf); break;
                 case Options.Sort: return Book.SortBookByAttribute(bookShelf);
-                case Options.Filter: Console.WriteLine(); break;
+                case Options.Filter: Book.SortBookByGenre(bookShelf); break;
                 case Options.Quit: Engine.Stop(); break;
                 default: Console.WriteLine("Wrong Input!"); break;
             }
