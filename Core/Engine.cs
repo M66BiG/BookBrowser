@@ -9,7 +9,7 @@ namespace BookBrowser.Core
         {
             while (true)
             {
-                Navigation.Navigator(bookShelf);
+                bookShelf = Navigation.Navigator(bookShelf);
             }
         }
         public static void Stop() 

@@ -10,6 +10,9 @@
         SetBookGenre,
         SetBookYear,
         SelectFilterGenre,
+        ShowGenres,
+        SelectSorting,
+        ShowAttributes,
         UnknownInput,
     }
 }
